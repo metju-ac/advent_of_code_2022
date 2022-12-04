@@ -21,7 +21,7 @@ def first(data):
     for turn in data:
         elf, me = turn[0], turn[1]
         score += first_score(elf, me)
-        score += ord(me) - 87
+        score += ord(me) - ord("X") + 1
     return score
 
 
@@ -29,11 +29,11 @@ def second_score(elf, win):
     if win == "X":
         if elf == "A":
             return 3
-        return ord(elf) - 65
+        return ord(elf) - ord("A")
     if win == "Y":
-        return ord(elf) - 61
+        return ord(elf) - ord("A") + 4
     if elf in ("A", "B"):
-        return ord(elf) - 57
+        return ord(elf) - ord("A") + 8
     return 7
 
 
