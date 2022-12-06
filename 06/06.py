@@ -1,16 +1,27 @@
+from collections import deque
+
+
 def load_data():
-    data = []
     with open("06.txt", "r") as f:
-        for line in f:
-            data.append(line.strip())
+        data = f.read()
     return data
 
+
+def solve(length, data):
+    chars = deque(data[:length])
+    for i in range(length, len(data)):
+        if len(set(chars)) == length:
+            return i
+        chars.popleft()
+        chars.append(data[i])
+
+
 def first(data):
-    pass
+    return solve(4, data)
 
 
 def second(data):
-    pass
+    return solve(14, data)
 
 
 if __name__ == '__main__':
