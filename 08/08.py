@@ -1,6 +1,6 @@
 def load_data():
     data = []
-    with open("03.txt", "r") as f:
+    with open("08.txt", "r") as f:
         for line in f:
             data.append(line.strip())
     return data
