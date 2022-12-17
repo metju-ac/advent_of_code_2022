@@ -1,3 +1,6 @@
+from copy import deepcopy
+
+
 class Monkey:
     def __init__(self, items, operation, test, tru, fal):
         self.items = items
@@ -93,7 +96,6 @@ def second(monkeys, modulo):
 
 
 if __name__ == '__main__':
-    data, _ = load_data()
-    print(first(data))
     data, mod = load_data()
+    print(first(deepcopy(data)))
     print(second(data, mod))
